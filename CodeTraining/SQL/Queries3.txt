@@ -1,0 +1,192 @@
+﻿-- 1. Отделы
+CREATE TABLE Department (
+    id INT PRIMARY KEY,
+    name NVARCHAR(100)
+);
+
+INSERT INTO Department VALUES
+(1, 'Engineering'),
+(2, 'HR'),
+(3, 'Marketing');
+
+-- 2. Сотрудники
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name NVARCHAR(100),
+    department_id INT,
+    hire_date DATE,
+    FOREIGN KEY (department_id) REFERENCES Department(id)
+);
+
+INSERT INTO Employee VALUES
+(1, 'Alice', 1, '2019-03-10'),
+(2, 'Bob', 1, '2020-07-15'),
+(3, 'Carol', 2, '2018-02-20'),
+(4, 'David', 3, '2021-01-12'),
+(5, 'Eve', 1, '2022-10-01');
+
+-- 3. Проекты
+CREATE TABLE Project (
+    id INT PRIMARY KEY,
+    name NVARCHAR(100),
+    start_date DATE
+);
+
+INSERT INTO Project VALUES
+(1, 'Migration to Cloud', '2023-01-01'),
+(2, 'Website Redesign', '2023-06-01'),
+(3, 'HR Onboarding System', '2022-03-15');
+
+-- 4. Связь сотрудников с проектами
+CREATE TABLE EmployeeProject (
+    employee_id INT,
+    project_id INT,
+    role NVARCHAR(100),
+    PRIMARY KEY (employee_id, project_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(id),
+    FOREIGN KEY (project_id) REFERENCES Project(id)
+);
+
+INSERT INTO EmployeeProject VALUES
+(1, 1, 'Developer'),
+(2, 1, 'DevOps'),
+(1, 2, 'Lead Developer'),
+(4, 2, 'Designer'),
+(3, 3, 'Coordinator');
+
+-- 5. История зарплат
+CREATE TABLE SalaryHistory (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    employee_id INT,
+    salary INT,
+    date DATE,
+    FOREIGN KEY (employee_id) REFERENCES Employee(id)
+);
+
+INSERT INTO SalaryHistory (employee_id, salary, date) VALUES
+(1, 70000, '2020-01-01'),
+(1, 80000, '2021-01-01'),
+(1, 90000, '2022-01-01'),
+(2, 60000, '2021-06-01'),
+(2, 65000, '2022-06-01'),
+(3, 50000, '2019-01-01'),
+(4, 55000, '2021-01-15'),
+(5, 72000, '2022-10-01');
+
+
+Задания для практики
+Базовые
+Получить список всех сотрудников и названия их отделов.
+
+SELECT e.name, d.name as department_name FROM Employee e
+JOIN Department d ON d.id = e.department_id
+
+
+Вывести всех сотрудников, работающих на проекте "Migration to Cloud".
+
+SELECT e.name FROM EmployeeProject ep
+JOIN Project p ON ep.project_id = p.id 
+JOIN Employee e ON ep.employee_id = e.id
+WHERE p.name = 'Migration to Cloud'
+
+
+Найти сотрудников, у которых в истории была зарплата выше 85,000.
+
+SELECT e.name, sh.salary FROM Employee e
+JOIN SalaryHistory sh ON e.id = sh.employee_id 
+WHERE sh.salary > 85000
+
+
+🔹 Средние
+Найти текущую (последнюю) зарплату каждого сотрудника.
+
+SELECT sh.employee_id as id, e.name, sh.salary, sh.date,
+FIRST_VALUE(sh.salary) OVER (PARTITION BY sh.employee_id ORDER BY sh.date DESC) as last_salary
+FROM Employee e
+JOIN SalaryHistory sh ON e.id = sh.employee_id 
+
+// Вот правильное
+WITH CTE AS (
+SELECT ROW_NUMBER() OVER (PARTITION BY sh.employee_id ORDER BY sh.date DESC) as rnk, e.name, sh.salary 
+FROM Employee e
+JOIN SalaryHistory sh ON e.id = sh.employee_id
+)
+SELECT * FROM CTE 
+WHERE rnk = 1
+
+Подсчитать, сколько проектов у каждого сотрудника.
+
+SELECT DISTINCT ep.employee_id, COUNT(*) OVER (PARTITION BY ep.project_id) FROM EmployeeProject ep
+
+Найти сотрудников, которые работают более чем на одном проекте.
+
+WITH CTE AS (
+SELECT DISTINCT ep.employee_id, 
+COUNT(*) OVER (PARTITION BY ep.project_id) as counts 
+FROM EmployeeProject ep
+)
+SELECT * FROM CTE 
+WHERE counts>1
+
+🔹 Продвинутые
+Найти отдел, в котором самая высокая средняя зарплата.
+
+WITH CTE AS (
+SELECT DISTINCT d.name, AVG(sh.salary) OVER (PARTITION BY d.id) as avg_salary FROM SalaryHistory sh 
+JOIN Employee e ON e.id = sh.employee_id
+JOIN Department d ON e.department_id = d.id
+)
+
+SELECT TOP(1) * FROM CTE
+ORDER BY avg_salary DESC 
+
+Вывести сотрудников, у которых не было повышения зарплаты за последний год.
+
+// Почти правильно
+WITH CTE AS (SELECT e.name, sh.salary, ROW_NUMBER() OVER (PARTITION BY sh.employee_id ORDER BY sh.date DESC) as rows, sh.date FROM SalaryHistory sh
+JOIN Employee e ON e.id = sh.employee_id)
+
+SELECT * FROM CTE 
+WHERE rows = 1 AND date != '2022'
+
+// Почти то же самое 
+WITH CTE AS (SELECT employee_id, MAX(date) as last_date FROM SalaryHistory GROUP BY employee_id)
+
+SELECT * FROM CTE 
+WHERE last_date < DATEADD(year, -1, '2023')
+
+Для каждого проекта вывести количество сотрудников и их роли в одном списке.
+
+SELECT DISTINCT ep.project_id, p.name,
+	   COUNT(*) OVER (PARTITION BY ep.project_id) AS employees_count,
+	   STRING_AGG(ep.role, ', ') AS role_list
+FROM EmployeeProject ep
+JOIN Project p ON p.id = ep.project_id
+GROUP BY ep.project_id, p.name
+
+🔹 Эксперт
+Найти второго сотрудника в каждом отделе по дате найма.
+
+WITH CTE AS (SELECT e.name, d.name as dep_name ,ROW_NUMBER() OVER (PARTITION BY d.id ORDER BY e.hire_date) as rnk, e.hire_date FROM Employee e 
+JOIN Department d ON d.id = e.department_id
+)
+
+SELECT * FROM CTE
+WHERE rnk = 2
+
+Вывести историю повышения зарплаты в процентах по каждому сотруднику.
+
+SELECT employee_id, salary, date, 
+salary,
+CASE 
+	WHEN LAG(salary) OVER (PARTITION BY employee_id ORDER BY date) IS NULL THEN NULL
+	ELSE 
+		ROUND(
+		(salary-LAG(salary) OVER (PARTITION BY employee_id ORDER BY date))* 100.0/
+		LAG(salary) OVER (PARTITION BY employee_id ORDER BY date),2
+		)
+		END AS salary_changed_percent
+FROM SalaryHistory
+
+
+Найти сотрудников, которые участвовали в проектах из других отделов.

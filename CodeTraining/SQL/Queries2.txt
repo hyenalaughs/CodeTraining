@@ -1,0 +1,117 @@
+﻿INSERT INTO Customers (Name, Email, Phone, City) VALUES
+('Иван Иванов', 'ivan@example.com', '+79001234567', 'Москва'),
+('Анна Смирнова', 'anna@example.com', '+79111234567', 'Санкт-Петербург'),
+('Пётр Васильев', 'petr@example.com', '+79231234567', 'Казань');
+
+-- Поставщики
+INSERT INTO Suppliers (Name, Contact) VALUES
+('ООО "ПоставкаТех"', 'contact@postavkatech.ru'),
+('ЗАО "БытХим"', 'info@bythim.com');
+
+-- Товары
+INSERT INTO Products (Name, Price, SupplierID) VALUES
+('Ноутбук HP', 50000, 1),
+('Смартфон Samsung', 35000, 1),
+('Чайник Philips', 3000, 2),
+('АКБ для ноутбука', 5500, 2);
+
+-- Заказы
+INSERT INTO Orders (CustomerID, OrderDate, TotalAmount) VALUES
+(1, '2024-02-15', 85000),
+(2, '2024-02-16', 35000),
+(3, '2024-02-17', 3000),
+(1, '2025-02-15', 90000);
+
+-- Детали заказа
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price) VALUES
+(1, 1, 1, 50000),  -- 1 ноутбук HP
+(1, 2, 1, 35000),  -- 1 смартфон Samsung
+(2, 2, 1, 35000),  -- 1 смартфон Samsung
+(3, 3, 1, 3000);   -- 1 чайник Philips
+
+
+
+1. Получите всех клиентов, живущих в Москве.
+
+SELECT * FROM Customers 
+WHERE City = 'Москва' 
+
+
+2. Выведите все заказы клиента "Анна Смирнова".
+
+SELECT c.Name, o.OrderID, o.OrderDate, o.TotalAmount FROM Orders o
+JOIN Customers c ON o.CustomerID = c.CustomerID
+WHERE c.Name = 'Анна Смирнова'
+
+
+3. Покажите все товары и их цену.
+
+SELECT Name, Price FROM Products 
+
+
+ЗАПРОСЫ СО СВЯЗЯМИ 
+
+1. Выведите список заказов с указанием имен клиентов.
+
+SELECT c.Name, o.OrderID, o.OrderDate FROM Orders o 
+JOIN Customers c ON c.CustomerID = o.CustomerID
+
+
+
+2. Найдите все товары, купленные "Иваном Ивановым".
+
+SELECT c.Name, o.OrderID, c.CustomerID, o.OrderDate, p.Name FROM Orders o 
+JOIN Customers c ON c.CustomerID = o.CustomerID
+JOIN OrderDetails od ON od.OrderID = o.OrderID
+JOIN Products p ON p.ProductID = od.ProductID
+WHERE c.Name = 'Иван Иванов'
+
+
+
+АГРЕГАЦИЯ И ГРУППИРОВКА 
+1. Найдите общее количество заказов у каждого клиента.
+
+SELECT c.Name, COUNT(*) FROM Customers c
+JOIN Orders o ON o.CustomerID = c.CustomerID  
+GROUP BY c.CustomerID, c.Name
+
+
+2. Определите среднюю сумму заказа.
+
+SELECT AVG(TotalAmount) FROM Orders
+
+3. Узнайте, сколько товаров продаёт каждый поставщик.
+
+SELECT s.Name, Count(*) as products_count FROM Products p
+JOIN Suppliers s ON p.SupplierID = s.SupplierID
+GROUP BY p.SupplierID, s.Name
+
+ПОДЗАПРОСЫ
+
+1. Выведите всех клиентов, которые совершили хотя бы 1 заказ.
+
+SELECT c.CustomerID, c.Name, COUNT(*) as Orders_Count FROM Customers c 
+JOIN Orders o ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerID, c.Name
+HAVING COUNT(*) >= 1
+
+2. Найдите товары, которые не были проданы.
+
+SELECT p.ProductID, p.Name FROM Products p
+LEFT JOIN OrderDetails od ON p.ProductID = od.ProductID
+WHERE od.ProductID IS NULL
+
+Оконные функции
+1. Выведите список заказов с ранжированием по сумме (RANK()).
+
+SELECT o.OrderID, o.CustomerID, o.TotalAmount,
+RANK() OVER (ORDER BY o.TotalAmount) as Rank
+FROM Orders o
+
+
+2. Определите кумулятивную сумму заказов по датам (SUM() OVER).
+
+
+SELECT o.OrderID, o.CustomerID, o.OrderDate, o.TotalAmount,
+SUM(o.TotalAmount) OVER (ORDER BY o.OrderDate) as CumAmount
+FROM Orders o
