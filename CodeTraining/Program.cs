@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using CodeTraining.Exercise;
 using Leetcode.Exercise;
 using Leetcode.Linq;
+using System.Net.Http.Headers;
 
 Console.WriteLine("Hello, World!");
 
@@ -30,6 +32,12 @@ Console.WriteLine("Hello, World!");
 //LessDigit less = new LessDigit();
 //less.Test();
 
-FromGtpAsync fga = new FromGtpAsync();
+//FromGtpAsync fga = new FromGtpAsync();
 //await fga.Execute1();
-fga.Execute3();
+//fga.Execute3();
+
+//var valid = new ValidAnagram();
+//valid.Test();
+
+var validPalindr = new ValidPalindrome();
+validPalindr.Test();
