@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\maximumsubarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\validanagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\validanagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\validpalindrome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\validpalindrome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\validanagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\validanagram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\movezero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -52,34 +52,36 @@
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\MaximumSubarray.cs",
               "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MaximumSubarray.cs",
               "RelativeToolTip": "CodeTraining\\Exercise\\MaximumSubarray.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T15:51:55.967Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ValidPalindrome.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidPalindrome.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ValidPalindrome.cs",
               "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidPalindrome.cs",
               "RelativeToolTip": "CodeTraining\\Exercise\\ValidPalindrome.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwCEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T14:14:34.042Z"
+              "WhenOpened": "2025-07-26T14:14:34.042Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ValidAnagram.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidAnagram.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ValidAnagram.cs",
               "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidAnagram.cs",
               "RelativeToolTip": "CodeTraining\\Exercise\\ValidAnagram.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAYwA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAYwGQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T11:46:45.247Z"
+              "WhenOpened": "2025-07-26T11:46:45.247Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Program.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Program.cs",
