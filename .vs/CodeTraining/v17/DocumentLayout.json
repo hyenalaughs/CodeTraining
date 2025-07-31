@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\productarrayexceptself.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\productarrayexceptself.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\containsduplicate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\containsduplicate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\maxprofit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\maxprofit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\twosumsplatforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\twosumsplatforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|c:\\users\\xsrv\\source\\repos\\codetraining\\codetraining\\exercise\\maximumsubarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{988D25A3-4B49-45C9-BC27-1D7F62E55D19}|CodeTraining\\CodeTraining.csproj|solutionrelative:codetraining\\exercise\\maximumsubarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,8 +46,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductArrayExceptSelf.cs",
+              "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ProductArrayExceptSelf.cs",
+              "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ProductArrayExceptSelf.cs",
+              "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ProductArrayExceptSelf.cs",
+              "RelativeToolTip": "CodeTraining\\Exercise\\ProductArrayExceptSelf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T10:01:05.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContainsDuplicate.cs",
+              "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ContainsDuplicate.cs",
+              "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ContainsDuplicate.cs",
+              "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ContainsDuplicate.cs",
+              "RelativeToolTip": "CodeTraining\\Exercise\\ContainsDuplicate.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T07:45:27.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MaxProfit.cs",
+              "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MaxProfit.cs",
+              "RelativeDocumentMoniker": "CodeTraining\\Exercise\\MaxProfit.cs",
+              "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MaxProfit.cs",
+              "RelativeToolTip": "CodeTraining\\Exercise\\MaxProfit.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T07:33:33.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TwoSumsPlatforma.cs",
+              "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\TwoSumsPlatforma.cs",
+              "RelativeDocumentMoniker": "CodeTraining\\Exercise\\TwoSumsPlatforma.cs",
+              "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\TwoSumsPlatforma.cs",
+              "RelativeToolTip": "CodeTraining\\Exercise\\TwoSumsPlatforma.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwDwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T07:24:52.29Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -46,20 +114,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MaximumSubarray.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MaximumSubarray.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\MaximumSubarray.cs",
               "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MaximumSubarray.cs",
               "RelativeToolTip": "CodeTraining\\Exercise\\MaximumSubarray.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwCwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T15:51:55.967Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ValidPalindrome.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidPalindrome.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ValidPalindrome.cs",
@@ -71,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ValidAnagram.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\ValidAnagram.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\ValidAnagram.cs",
@@ -83,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "MoveZero.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Exercise\\MoveZero.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Exercise\\MoveZero.cs",
@@ -95,13 +163,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Program.cs",
               "RelativeDocumentMoniker": "CodeTraining\\Program.cs",
               "ToolTip": "C:\\Users\\xsrv\\source\\repos\\CodeTraining\\CodeTraining\\Program.cs",
               "RelativeToolTip": "CodeTraining\\Program.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T07:17:24.451Z"
             }

@@ -37,5 +37,28 @@
 
 
         }
+
+        public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> seen = new();
+            var result = new int[2];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var current = nums[i];
+                var need = target - current;
+
+                if (seen.TryGetValue(need, out var j))
+                {
+                    result[0] = i;
+                    result[1] = j;
+                    break;
+                }
+
+                seen.Add(current, i);
+            }
+
+            return result;
+        }
     }
 }

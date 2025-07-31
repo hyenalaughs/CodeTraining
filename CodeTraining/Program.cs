@@ -39,5 +39,8 @@ Console.WriteLine("Hello, World!");
 //var valid = new ValidAnagram();
 //valid.Test();
 
-var validPalindr = new ValidPalindrome();
-validPalindr.Test();
+//var validPalindr = new ValidPalindrome();
+//validPalindr.Test();
+
+var maximumSubarray = new MaximumSubarray();
+maximumSubarray.Test();
